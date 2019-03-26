@@ -29,7 +29,7 @@ class InteractiveRecord
   def save
     sql = "INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (#{values_for_insert})"
     DB[:conn].execute(sql)
-    @id = DB[:conn].execute("SELECT l* FROM #{table_name_for_insert} LIMIT 1"
+    @id = DB[:conn].execute("SELECT * FROM #{table_name_for_insert} LIMIT 1"
   end
   
   def table_name_for_insert
